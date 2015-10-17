@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <title><%= title %></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="POS System made for micro business">
+    <meta name="author" content="John Noel Bruno">
+
+    <!-- The styles -->
+    <link href="resources/css/bootstrap-united.min.css" rel="stylesheet">
+
+    <link href="resources/css/app.css" rel="stylesheet">
+
+    <link href='resources/css/animate.min.css' rel='stylesheet'>
+
+    <!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- The fav icon -->
+    <link rel="shortcut icon" href="img/favicon.ico">
+
+</head>
+
+<body>
+
+
+<div class="ch-container">
+    <div class="row">
+        
+    <div class="row">
+        <div class="col-md-12 center login-header">
+            <h2>Mean Blog</h2>
+        </div>
+        <!--/span-->
+    </div><!--/row-->
+
+    <div class="row">
+        <div class="well col-md-5 center login-box" ng-show="Authentication.user">
+                            <% for(var i in messages) { %>
+
+                <div class="flash alert alert-danger">
+                    <button type="button" class="close" data-dismiss="alert">×</button>
+                    <%= messages[i] %>
+                </div>
+                <% } %>
+            <div class="alert alert-info">
+                Please login with your Username and Password.
+            </div>
+            <form action="/signin" class="form-horizontal" method="post">
+                <fieldset>
+                    <div class="input-group input-group-lg">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-user red"></i></span>
+                        <input type="text" class="form-control" name="username">
+                    </div>
+                    <div class="clearfix"></div><br>
+
+                    <div class="input-group input-group-lg">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock red"></i></span>
+                        <input type="password" class="form-control" name="password">
+                    </div>
+                    <div class="clearfix"></div>
+
+                    <div class="input-prepend">
+                        <label class="remember" for="remember"><input type="checkbox" id="remember"> Remember me</label>
+                    </div>
+                    <div class="clearfix"></div>
+
+                    <p class="center col-md-5">
+                        <a href="/oauth/facebook">Sign in with Facebook</a>
+                        <button type="submit" value="Sign In" class="btn btn-primary">Login</button>
+                    </p>
+                </fieldset>
+            </form>
+        </div>
+        <!--/span-->
+    </div><!--/row-->
+</div><!--/fluid-row-->
+
+</div><!--/.fluid-container-->
+
+
+
+
+<!-- AngularJS -->
+        <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+        <script type="text/javascript" src="/lib/angular/angular.js"></script>
+        <script type="text/javascript" src="/lib/angular-route/angular-route.js"></script>
+        <script type="text/javascript" src="/lib/angular-resource/angular-resource.js"></script>
+        <script type="text/javascript" src="/lib/angular-sanitize/angular-sanitize.min.js"></script>
+        <script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+        <script type="text/javascript" src="/lib/bootstrap/js/bootstrap.min.js"></script>
+
+
+
+        <script type="text/javascript" src="/articles/articles.client.module.js"></script>
+        <script type="text/javascript" src="/articles/controllers/articles.client.controller.js"></script>
+        <script type="text/javascript" src="/articles/services/articles.client.service.js"></script>
+        <script type="text/javascript" src="/articles/config/articles.client.routes.js"></script>
+
+        <script type="text/javascript" src="/index/index.client.module.js"></script>
+        <script type="text/javascript" src="/index/controllers/index.client.controller.js"></script>
+        <script type="text/javascript" src="/index/config/index.client.routes.js"></script>
+
+        <script type="text/javascript" src="/users/users.client.module.js"></script>
+        <script type="text/javascript" src="/users/services/authentication.client.service.js"></script>
+
+        <script type="text/javascript" src="/chat/chat.client.module.js"></script>
+        <script type="text/javascript" src="/chat/services/socket.client.service.js"></script>
+        <script type="text/javascript" src="/chat/controllers/chat.client.controller.js"></script>
+        <script type="text/javascript" src="/chat/config/chat.client.routes.js"></script>
+
+        <script type="text/javascript" src="/module/directive/ckeditor.client.directive.js"></script>
+        <script type="text/javascript" src="/application.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+
+
+
+<section ng-controller="ArticlesController" ng-init="findOne()">
+	<div class="box col-md-10" style="float: right;">
+	  <div class="box-inner">
+	    <div class="box-header well" data-original-title="">
+	      <h2><i class="glyphicon glyphicon-user"></i> Edit Article</h2>
+	      <div class="box-icon">
+	      	
+	       
+
+	         	<div class="box-icon">
+				<a href="/#!/articles/{{article._id}}/edit" class="btn btn-setting btn-round btn-primary"><i class="glyphicon glyphicon-pencil"></i></a>
+				<a href="#" data-ng-click="delete();" class="btn btn-minimize btn-round btn-danger"><i class="glyphicon glyphicon-trash"></i></a>
+				</div>
+
+
+	      </div>
+	    </div>
+	    <div class="box-content" >
+					<div ng-show="authentication.user._id == article.creator._id">
+	    			<div class="page-header">
+					<h1 ng-bind="article.title"></h1>
+
+			
+					<small>
+					<em>Posted on</em>
+						<em ng-bind="article.created | date:'mediumDate'"></em>
+						<em>by</em>
+						<em ng-bind="article.creator.fullName"></em>
+					</small>
+					<div>
+
+
+
+				<p ng-bind-html="article.content"></p>
+			
+
+
+
+
+
+						<p>
+
+						</p>
+					</div>
+					<div ng-show="error">
+						<strong ng-bind="error"></strong>
+					</div>
+	    </div>
+	  </div>
+	</div>
+</section>
